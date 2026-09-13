@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudhanshu Kulshreshtha - Executive Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --calm-slate-deep: #243B4D;
+      --calm-cerulean: #257099;
+      --calm-light-blue: #F0F6FA;
+      --text-main: #14202B;
+      --text-muted: #485A6A;
+      --border-color: #D2E1EC;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text-main);
+      background: #FFFFFF;
+      line-height: 1.36;
+      font-size: 8.75pt;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Print Setup for Guaranteed 2 Pages */
+    @page {
+      size: A4;
+      margin: 10mm 13mm;
+    }
+
+    @media print {
+      html, body {
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #FFFFFF !important;
+        font-size: 8.5pt !important;
+        line-height: 1.34 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-2-start {
+        page-break-before: always !important;
+        break-before: page !important;
+      }
+      .avoid-break {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+    }
+
+    /* Header */
+    .resume-header {
+      border-bottom: 2px solid var(--calm-slate-deep);
+      padding-bottom: 0.45rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .name-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.2rem;
+    }
+
+    .candidate-name {
+      font-size: 19pt;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--calm-slate-deep);
+      line-height: 1;
+    }
+
+    .candidate-location {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .candidate-tagline {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--calm-cerulean);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      font-size: 8.25pt;
+      color: var(--text-muted);
+    }
+
+    .contact-bar a {
+      color: var(--calm-slate-deep);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Section Styling */
+    .section {
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: 9.25pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--calm-slate-deep);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.18rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .executive-summary {
+      font-size: 8.5pt;
+      color: var(--text-main);
+      line-height: 1.42;
+      text-align: justify;
+    }
+
+    /* Core Pillars Strip */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.55rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .pillar-box {
+      background: var(--calm-light-blue);
+      border-left: 2.5px solid var(--calm-cerulean);
+      padding: 0.45rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    .pillar-box h4 {
+      font-size: 8.25pt;
+      font-weight: 700;
+      color: var(--calm-slate-deep);
+      margin-bottom: 0.15rem;
+    }
+
+    .pillar-box p {
+      font-size: 7.6pt;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    /* Experience Items */
+    .exp-item {
+      margin-bottom: 0.65rem;
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.1rem;
+    }
+
+    .exp-role {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .exp-dates {
+      font-size: 8.25pt;
+      font-weight: 600;
+      color: var(--calm-cerulean);
+    }
+
+    .exp-sub {
+      font-size: 8.25pt;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-scope {
+      font-size: 8.25pt;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+      font-style: italic;
+      line-height: 1.35;
+    }
+
+    .bullet-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 0.85rem;
+      margin-bottom: 0.28rem;
+      font-size: 8.35pt;
+      color: var(--text-main);
+      line-height: 1.38;
+    }
+
+    .bullet-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0.1rem;
+      color: var(--calm-cerulean);
+      font-size: 7pt;
+      top: -1px;
+    }
+
+    .bullet-list li strong {
+      color: var(--calm-slate-deep);
+    }
+
+    /* Two Column Layout */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.15rem;
+    }
+
+    .col-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .col-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-title {
+      font-size: 8.75pt;
+      font-weight: 700;
+      color: var(--calm-slate-deep);
+    }
+
+    .item-sub {
+      font-size: 7.75pt;
+      font-weight: 600;
+      color: var(--calm-cerulean);
+      margin-bottom: 0.1rem;
+    }
+
+    .item-desc {
+      font-size: 7.85pt;
+      color: var(--text-muted);
+      line-height: 1.32;
+    }
+
+    .print-bar {
+      margin-bottom: 1.25rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+    }
+
+    .btn-print {
+      background: var(--calm-slate-deep);
+      color: #FFFFFF;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      font-size: 8.75pt;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen-only Print Bar -->
+  <div class="print-bar no-print">
+    <button onclick="window.print()" class="btn-print">Print / Save as PDF (Guaranteed 2 Pages)</button>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- PAGE 1: Executive Profile, Competencies & SpunOut Institutional Leadership -->
+  <!-- ================================================================= -->
+  <div class="page-1-wrapper">
+    <!-- Header -->
+    <header class="resume-header">
+      <div class="name-title-row">
+        <h1 class="candidate-name">SUDHANSHU KULSHRESHTHA</h1>
+        <span class="candidate-location">Dublin, Ireland</span>
+      </div>
+      <div class="candidate-tagline">
+        Strategic Leader | Youth Mental Health | Board Governance | Digital Transformation
+      </div>
+      <div class="contact-bar">
+        <span>+353 871 738 826</span>
+        <span>•</span>
+        <a href="mailto:kul.sudhanshu@gmail.com">kul.sudhanshu@gmail.com</a>
+        <span>•</span>
+        <a href="https://linkedin.com/in/sudhanshu-kulshreshtha" target="_blank">linkedin.com/in/sudhanshu-kulshreshtha</a>
+      </div>
+    </header>
+
+    <!-- Executive Profile -->
+    <section class="section">
+      <div class="section-title">Executive Profile</div>
+      <p class="executive-summary">
+        Purpose-driven leader with 13+ years across data, analytics, research, digital transformation, organisational change and stakeholder engagement, with deep experience in Ireland's youth mental-health and nonprofit environment. At SpunOut, effectively serve as the organisation's one-person data function, with responsibility spanning data analysis, engineering, business intelligence, research, reporting and governance, partnering directly with Senior Leadership and the Board on strategic decisions, service performance, and funding. Founder and CEO of Loggdin, an independent Dublin digital studio focused on reporting, digital products, AI strategy and automation. Known for understanding the problem behind a request, defining practical evidence-led solutions, and establishing sustainable ways of working.
+      </p>
+    </section>
+
+    <!-- Core Competencies -->
+    <section class="section">
+      <div class="section-title">Core Competencies</div>
+      <div class="pillars-grid">
+        <div class="pillar-box">
+          <h4>Youth Mental Health Authority</h4>
+          <p>Direct knowledge of frontline operations (50k chats/yr), crisis listening, trauma-informed evaluation, and published national health evidence.</p>
+        </div>
+        <div class="pillar-box">
+          <h4>Board Governance & Strategy</h4>
+          <p>Architected commended 3-layer Board reporting; committee member across Finance, Planning, and Technology; expert in GDPR and AI ethics.</p>
+        </div>
+        <div class="pillar-box">
+          <h4>Digital Innovation & Delivery</h4>
+          <p>Founder & CEO track record setting strategy, product roadmaps, and delivery models; led multi-year enterprise platform transformations and team upskilling.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Experience: SpunOut -->
+    <section class="section">
+      <div class="section-title">Leadership Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">One-Person Data Function Lead (Designation: Data Analyst)</span>
+          <span class="exp-dates">December 2022 – Present</span>
+        </div>
+        <div class="exp-sub">SpunOut (Ireland's Youth Information & Support Platform) | Dublin, Ireland</div>
+        <p class="exp-scope">
+          Organisation-wide responsibility for data and insight, effectively serving as the one-person data function across analysis, engineering, BI, research, reporting, and governance across all services (including <em>Text About It</em>, supporting ~50,000 conversations/year).
+        </p>
+        <ul class="bullet-list">
+          <li><strong>Board Governance & Executive Reporting:</strong> Designed a three-layer Board reporting model covering quarterly narrative and key KPIs, detailed monthly trends with 3-year comparisons, and supporting drilldowns. Praised repeatedly by the Board and SLT for eliminating reporting friction and answering emerging requests near-immediately.</li>
+          <li><strong>National Youth Mental Health Research:</strong> Led the data and analytical workstream behind SpunOut's landmark <em>250,000 Conversations</em> 5-year report, synthesizing 7.9M messages into published evidence on youth demand patterns, demographics, and safeguarding flags. Contributed key analytical findings to SpunOut's published <em>Loneliness Report</em>.</li>
+          <li><strong>Service Redesign & Trauma-Informed ACE Review (+14% Response Lift):</strong> Performed thematic analysis of 1-to-3 rated conversations, identifying confusing survey wording and prompting critical clinical discussions around whether sensitive Adverse Childhood Experiences (ACE) questions were appropriate immediately post-support. Delivered complete survey redesign and schema refactor, increasing response rates from <strong>8.4% to 9.6%</strong> in year one while preserving longitudinal comparability.</li>
+          <li><strong>Digital & Platform Modernization:</strong> Led two major BI platform transitions (Periscope → Sisense, and Sisense → Sigma) and secured enterprise Databricks lakehouse access; refactored raw tables into governed datasets and automated Sigma-to-Slack operational workflows.</li>
+          <li><strong>Ethical Governance & AI Framework:</strong> Embedded organisation-wide data governance covering GDPR compliance, data quality, access controls, and retention. Formulated a practical, organisation-wide AI Governance Framework.</li>
+          <li><strong>Stakeholder Leadership & Funding:</strong> Partner with Senior Leadership on funding proposals, white papers, and organizational policies; manage technology vendors and contractors, chair internal working groups, and deliver data-literacy mentoring.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- PAGE 2: Founder Experience, Employment History, Governance & Education -->
+  <!-- ================================================================= -->
+  <div class="page-2-start">
+    <!-- Founder Experience: Loggdin -->
+    <section class="section">
+      <div class="section-title">Founder Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Founder and CEO</span>
+          <span class="exp-dates">July 2026 – Present</span>
+        </div>
+        <div class="exp-sub">Loggdin (Independent Digital Studio) | Dublin, Ireland</div>
+        <p class="exp-scope">
+          Founded in July 2026 as an independent Dublin studio focused on reporting, digital products, AI strategy, and automation.
+        </p>
+        <ul class="bullet-list">
+          <li><strong>Strategic Direction & Service Delivery:</strong> Set business direction, qualification of opportunities, product roadmaps, and delivery architecture; define products and services from concept through production.</li>
+          <li><strong>Digital Products & Practical AI:</strong> Building digital products and practical AI automation solutions with an open-build model, including a public-facing driving-test route resource, automated Notion architectures, and executive reporting suites.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Consolidated Prior Employment History -->
+    <section class="section">
+      <div class="section-title">Employment History (2013 – 2021)</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Professional Experience Across Technology & Operations</span>
+          <span class="exp-dates">2013 – 2021</span>
+        </div>
+        <div class="exp-sub">HCL Technologies | Emirates Airlines (Dubai) | Amdocs | Accenture</div>
+        <ul class="bullet-list">
+          <li><strong>BI Consultant – HCL Technologies (Dec 2020 – Sep 2021):</strong> Delivered business intelligence and data solutions, data modeling, SQL, Tableau, data transformation, and technical documentation. Designed 4 automated IVR workflows following call-data analysis, reducing contact center load by 10%.</li>
+          <li><strong>Marketing Specialist, Data – Emirates Airlines (Jul 2019 – Jul 2020, Dubai, UAE):</strong> Analyzed passenger, weather, and operational datasets to build Tableau dashboards supporting resource and organizational planning; conducted customer sentiment research using NLP techniques, translating large datasets into actionable findings.</li>
+          <li><strong>Senior Business Analyst – Amdocs (Feb 2017 – Jun 2019):</strong> Managed and mentored a team of analysts while collaborating with stakeholders across functions; led predictive cost forecasting, data extraction, preparation, and executive visualization suites.</li>
+          <li><strong>Business Analyst – Accenture (May 2016 – Feb 2017):</strong> Developed Tableau dashboards for a Commercial Banking CFO group; supported digital transformation initiative analyzing ServiceNow data that reduced ticket volumes by 15%.</li>
+          <li><strong>Data Analyst – HCL Technologies (Oct 2013 – May 2016):</strong> Built recurring reporting solutions using Power BI and SQL, bridging technical teams with operational leadership to translate reporting needs into practical solutions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Governance, Community & Research -->
+    <section class="section">
+      <div class="section-title">Governance, Community & Research</div>
+      <div class="two-col-grid">
+        <div>
+          <div class="col-item">
+            <div class="item-title">Irish Vipassana Trust — Appointed Committee Member</div>
+            <div class="item-sub">August 2024 – October 2025 | Dublin, Ireland</div>
+            <p class="item-desc">Formally appointed to support establishing a permanent property in Ireland; contributed strategic governance across Finance, Planning, and Technology Committees.</p>
+          </div>
+          <div class="col-item">
+            <div class="item-title">Seven Cups — Volunteer Listener & Community Safety</div>
+            <div class="item-sub">~4 Years Active Service | 2,397 Support Chats | 228 People Helped</div>
+            <p class="item-desc">Completed structured peer-support training; provided frontline crisis listening, progressing into community safety oversight detecting and remediating inappropriate behavior.</p>
+          </div>
+          <div class="col-item">
+            <div class="item-title">Civic Volunteering (OLIO & St Patrick's Festival)</div>
+            <div class="item-sub">2022 – 2026 | Dublin</div>
+            <p class="item-desc">Food Waste Hero redistributing surplus food locally; supported operational delivery of Dublin's St Patrick's Day Parade (2026).</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="col-item">
+            <div class="item-title">250,000 Conversations: 5-Year Milestone Report</div>
+            <div class="item-sub">Lead Data & Analysis Workstream | SpunOut</div>
+            <p class="item-desc">Published landmark report covering 250k conversations and 7.9M messages across usage, demographics, safeguarding, mental health topics, and volunteer contributions.</p>
+          </div>
+          <div class="col-item">
+            <div class="item-title">Loneliness: What Ireland's Young People Are Telling Us</div>
+            <div class="item-sub">Published Evidence Contributor | SpunOut</div>
+            <p class="item-desc">Turned frontline support data into published evidence examining youth loneliness patterns, co-occurring concerns, and peak help-seeking times.</p>
+          </div>
+          <div class="col-item">
+            <div class="item-title">Organisation-Wide AI Governance Framework</div>
+            <div class="item-sub">Author & Strategic Lead | Policy</div>
+            <p class="item-desc">Engineered an institutional framework balancing responsible AI adoption, youth data privacy, and ethical implementation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Credentials -->
+    <section class="section" style="margin-bottom: 0;">
+      <div class="section-title">Education & Credentials</div>
+      <div class="two-col-grid">
+        <div>
+          <div class="col-item">
+            <div class="item-title">MSc in Computing (Data Analytics)</div>
+            <div class="item-sub">Dublin City University (DCU), Ireland | 2021 – 2022</div>
+          </div>
+          <div class="col-item">
+            <div class="item-title">Bachelor of Technology (B.Tech)</div>
+            <div class="item-sub">Rajasthan Technical University, India | 2009 – 2013</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="col-item">
+            <div class="item-title">Microsoft Certified: Azure Data Fundamentals (DP-900)</div>
+            <div class="item-sub">Cloud & Enterprise Data Systems Architecture</div>
+          </div>
+          <div class="col-item">
+            <div class="item-title">Microsoft Certified: Azure Fundamentals (AZ-900)</div>
+            <div class="item-sub">Cloud Infrastructure, Privacy & Governance Architecture</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
