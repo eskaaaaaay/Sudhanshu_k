@@ -2,3 +2,8 @@
 scratch/
 __pycache__/
 *.pyc
+*.HEIC
+*.DNG
+*.mov
+assets/water_*.jpg
+!assets/water_*_web.jpg
