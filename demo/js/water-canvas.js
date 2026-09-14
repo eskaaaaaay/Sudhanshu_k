@@ -196,9 +196,11 @@
   const uTheme = gl.getUniformLocation(program, 'u_theme');
   const uRipples = gl.getUniformLocation(program, 'u_ripples');
 
-  // Resize handling
+  // Resize handling (Mobile-optimized DPR to prevent battery drain)
   function resize() {
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const isMobile = window.innerWidth <= 768;
+    const maxDpr = isMobile ? 1.2 : 1.5;
+    const dpr = Math.min(window.devicePixelRatio || 1, maxDpr);
     canvas.width = window.innerWidth * dpr;
     canvas.height = window.innerHeight * dpr;
     gl.viewport(0, 0, canvas.width, canvas.height);
@@ -244,9 +246,29 @@
     addRipple(e.clientX, e.clientY);
   });
 
+  // Mobile Touch Support (gentle water ripples as user scrolls/taps)
   window.addEventListener('touchstart', function(e) {
     if (e.touches.length > 0) {
-      addRipple(e.touches[0].clientX, e.touches[0].clientY);
+      const t = e.touches[0];
+      addRipple(t.clientX, t.clientY);
+      lastX = t.clientX;
+      lastY = t.clientY;
+      lastMoveTime = performance.now();
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchmove', function(e) {
+    if (e.touches.length > 0) {
+      const t = e.touches[0];
+      const now = performance.now();
+      const dist = Math.hypot(t.clientX - lastX, t.clientY - lastY);
+
+      if (now - lastMoveTime > 180 && dist > 35) {
+        addRipple(t.clientX, t.clientY);
+        lastMoveTime = now;
+        lastX = t.clientX;
+        lastY = t.clientY;
+      }
     }
   }, { passive: true });
 

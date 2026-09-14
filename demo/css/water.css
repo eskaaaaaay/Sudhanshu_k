@@ -27,6 +27,7 @@
   --text-body: #0d2842;
   --text-muted: #3a5b7c;
 
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
@@ -290,6 +291,188 @@ body {
   color: var(--accent-primary);
 }
 
+/* Hamburger Trigger (Mobile Only) */
+.btn-hamburger {
+  display: none;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--text-lead);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all var(--transition-calm);
+}
+
+[data-theme="dark"] .btn-hamburger {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  color: #f8fafc;
+}
+
+.btn-hamburger:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* Mobile Drawer Overlay */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 22, 41, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 150;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-drawer-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile Drawer Menu */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(340px, 85vw);
+  background: rgba(240, 248, 255, 0.94);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+  z-index: 160;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 1.5rem;
+  overflow-y: auto;
+}
+
+[data-theme="dark"] .mobile-drawer {
+  background: rgba(9, 14, 30, 0.96);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.6);
+}
+
+.mobile-drawer.active {
+  transform: translateX(0);
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .mobile-drawer-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-drawer-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.mobile-drawer-close {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  color: var(--text-lead);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-calm);
+}
+
+[data-theme="dark"] .mobile-drawer-close {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.mobile-drawer-close:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.mobile-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-lead);
+  font-size: 1.05rem;
+  font-weight: 700;
+  transition: background var(--transition-calm), color var(--transition-calm);
+}
+
+.mobile-nav-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background: rgba(2, 132, 199, 0.12);
+  color: var(--accent-primary);
+}
+
+[data-theme="dark"] .mobile-nav-link:hover,
+[data-theme="dark"] .mobile-nav-link.active {
+  background: rgba(244, 63, 94, 0.15);
+  color: var(--accent-primary);
+}
+
+.mobile-drawer-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .mobile-drawer-actions {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-drawer-actions .btn {
+  justify-content: center;
+  width: 100%;
+}
+
 /* Page Layout */
 .page-hero {
   padding: 5rem 0 4rem;
@@ -332,13 +515,19 @@ body {
 }
 
 .page-title {
-  font-size: 2.9rem;
-  font-weight: 800;
-  letter-spacing: -0.035em;
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
   line-height: 1.18;
   color: var(--text-lead);
   margin-bottom: 1.5rem;
   max-width: 900px;
+}
+
+.page-title em, .page-title i {
+  font-style: italic;
+  font-weight: 400;
 }
 
 .water-gradient-text {
@@ -354,18 +543,25 @@ body {
 }
 
 .page-lede {
-  font-size: 1.22rem;
-  line-height: 1.75;
+  font-size: clamp(1.05rem, 2vw, 1.22rem);
+  line-height: 1.8;
   color: var(--text-body);
   max-width: 780px;
-  margin-bottom: 2.5rem;
-  font-weight: 500;
+  margin-bottom: 2.25rem;
+  font-weight: 450;
 }
 
 /* Story Quote Box */
 .story-block {
   padding: 3.5rem 0;
   border-bottom: 1px solid var(--border-calm);
+}
+
+.story-block h2, .section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
 }
 
 .story-quote-box {
@@ -377,16 +573,18 @@ body {
   border-right: 1px solid var(--border-calm);
   border-bottom: 1px solid var(--border-calm);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  padding: 2.25rem 2.5rem;
-  margin: 2.75rem 0;
+  padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.5rem, 3.5vw, 2.5rem);
+  margin: 2.5rem 0;
   box-shadow: var(--shadow-water);
 }
 
 .story-quote-text {
-  font-size: 1.18rem;
-  line-height: 1.75;
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  line-height: 1.7;
   color: var(--text-lead);
   font-style: italic;
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 
@@ -885,39 +1083,103 @@ body {
   justify-content: space-between;
 }
 
+.life-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 3.5rem 0;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
+  .site-header .nav-row {
+    height: 60px;
+  }
+  .nav-links,
+  .nav-cta-cv,
+  .nav-cta-contact {
+    display: none !important;
+  }
+  .btn-hamburger {
+    display: flex;
+  }
+  .page-hero {
+    padding: 3.5rem 0 2.5rem;
+  }
   .stat-water-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  .stat-water-card {
+    padding: 1.25rem 1rem;
+  }
+  .stat-water-val {
+    font-size: 1.65rem;
   }
   .chapter-cards-grid, .shelf-grid, .photo-vignette-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .life-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 2rem 0;
   }
   .sentiments-masonry {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   .stepper-box {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
   .stepper-indicator {
-    width: 52px;
-    height: 52px;
-    font-size: 1.1rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.05rem;
   }
   .resume-dossier-callout {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.75rem 1.5rem;
   }
-  .nav-links {
-    display: none;
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
   }
 }
 
-@media (max-width: 600px) {
-  .page-title {
-    font-size: 2.2rem;
+@media (max-width: 560px) {
+  .container {
+    padding: 0 1.15rem;
   }
-  .stat-water-grid, .sentiments-masonry {
+  .brand-meta p {
+    display: none; /* Keeps header ultra-compact and prevents wrapping on small mobile */
+  }
+  .hero-cta-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .hero-cta-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .stat-water-grid {
     grid-template-columns: 1fr;
+  }
+  .page-hero {
+    padding: 2.75rem 0 2rem;
+  }
+  .story-block {
+    padding: 2.5rem 0;
   }
 }
