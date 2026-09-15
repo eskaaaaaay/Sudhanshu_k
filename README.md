@@ -1,8 +1,8 @@
-# Sudhanshu Kulshreshtha — Executive Portfolio & Resume
+# Sudhanshu Kulshreshtha — Portfolio & Resume
 
-Executive portfolio and dossier for **Sudhanshu Kulshreshtha**, Strategic Leader across Youth Mental Health, Board Governance & Digital Transformation.
+Portfolio for **Sudhanshu Kulshreshtha**, Data Systems, Reporting & Digital Products.
 
-- **Current Role**: One-Person Data Function Lead @ SpunOut
+- **Role**: Data Analyst @ SpunOut
 - **Founder & CEO**: Loggdin (Independent Digital Studio)
 - **Location**: Dublin, Ireland
 - **Contact**: kul.sudhanshu@gmail.com | +353 871 738 826
@@ -10,13 +10,16 @@ Executive portfolio and dossier for **Sudhanshu Kulshreshtha**, Strategic Leader
 
 ## Repository Structure
 
-- `index.html`: Executive portfolio with calm aesthetic, strategic pillars, and interactive briefs.
+- `index.html`: Main portfolio homepage & prologue.
+- `empathy.html`: Chapter 01 — The Art of Listening.
+- `how-i-work.html`: Chapter 02 — Problem solving methodology.
+- `work.html`: Chapter 03 — Builder, Loggdin, and published evidence.
+- `life.html`: Chapter 04 — Water, stillness, and community volunteering.
 - `resume.html`: Web and print-optimized 2-page executive resume.
 - `Sudhanshu_Kulshreshtha_Resume.pdf`: Publication-grade 2-page executive PDF resume.
-- `Sudhanshu_Kulshreshtha_Resume.docx`: Editable Microsoft Word executive resume.
-- `assets/`: PDF and Word documents.
-- `css/`: Stylesheet design system.
-- `js/`: Modular data and interactivity.
+- `assets/`: Photography, PDF, and media assets.
+- `css/`: Stylesheets (`water.css`).
+- `js/`: Interactivity and dynamic canvas shaders.
 
 ## Deployment & Hosting
 
