@@ -58,50 +58,54 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer & Backdrop -->
-  <div id="mobile-nav-overlay" class="mobile-drawer-overlay"></div>
-  <aside id="mobile-nav-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
-    <div class="mobile-drawer-header">
-      <div class="mobile-drawer-title">Navigation &bull; Chapters</div>
-      <button id="mobile-drawer-close" class="mobile-drawer-close" aria-label="Close Navigation">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  <!-- Full-Screen Opaque Mobile Navigation Modal -->
+  <div id="mobile-menu-modal" class="mobile-menu-modal" aria-label="Mobile Navigation" role="dialog" aria-modal="true">
+    <div class="mobile-menu-top">
+      <a href="index.html" class="brand-link">
+        <div class="avatar-sea">SK</div>
+        <div class="brand-meta">
+          <h1>Sudhanshu Kulshreshtha</h1>
+        </div>
+      </a>
+      <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close Navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
     </div>
 
-    <ul class="mobile-nav-list">
-      <li>
-        <a href="index.html" class="mobile-nav-link">
-          <span class="mobile-nav-num">00</span>
-          <span>Story &amp; Prologue</span>
+    <ul class="mobile-menu-list">
+      <li class="mobile-menu-item">
+        <a href="index.html">
+          <span class="mobile-menu-num">00</span>
+          <span class="mobile-menu-label">Story &amp; Prologue</span>
         </a>
       </li>
-      <li>
-        <a href="empathy.html" class="mobile-nav-link">
-          <span class="mobile-nav-num">01</span>
-          <span>Empathy First</span>
+      <li class="mobile-menu-item">
+        <a href="empathy.html">
+          <span class="mobile-menu-num">01</span>
+          <span class="mobile-menu-label">Empathy First</span>
         </a>
       </li>
-      <li>
-        <a href="how-i-work.html" class="mobile-nav-link">
-          <span class="mobile-nav-num">02</span>
-          <span>How I Solve Problems</span>
+      <li class="mobile-menu-item">
+        <a href="how-i-work.html">
+          <span class="mobile-menu-num">02</span>
+          <span class="mobile-menu-label">How I Solve Problems</span>
         </a>
       </li>
-      <li>
-        <a href="work.html" class="mobile-nav-link active">
-          <span class="mobile-nav-num">03</span>
-          <span>Builder &amp; Published Work</span>
+      <li class="mobile-menu-item">
+        <a href="work.html" class="active">
+          <span class="mobile-menu-num">03</span>
+          <span class="mobile-menu-label">Builder &amp; Published Work</span>
         </a>
       </li>
-      <li>
-        <a href="life.html" class="mobile-nav-link">
-          <span class="mobile-nav-num">04</span>
-          <span>Life Near Water</span>
+      <li class="mobile-menu-item">
+        <a href="life.html">
+          <span class="mobile-menu-num">04</span>
+          <span class="mobile-menu-label">Life Near Water</span>
         </a>
       </li>
     </ul>
 
-    <div class="mobile-drawer-actions">
+    <div class="mobile-menu-actions">
       <a href="../Sudhanshu_Kulshreshtha_Resume.pdf" download="Sudhanshu_Kulshreshtha_Resume.pdf" class="btn btn-outline">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
         <span>Download CV (PDF)</span>
@@ -110,7 +114,7 @@
         <span>Get in Touch</span>
       </a>
     </div>
-  </aside>
+  </div>
 
   <main>
     <section class="page-hero">

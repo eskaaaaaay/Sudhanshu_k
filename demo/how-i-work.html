@@ -58,50 +58,54 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer & Backdrop -->
-  <div id="mobile-nav-overlay" class="mobile-drawer-overlay"></div>
-  <aside id="mobile-nav-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
-    <div class="mobile-drawer-header">
-      <div class="mobile-drawer-title">Navigation &bull; Chapters</div>
-      <button id="mobile-drawer-close" class="mobile-drawer-close" aria-label="Close Navigation">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  <!-- Full-Screen Opaque Mobile Navigation Modal -->
+  <div id="mobile-menu-modal" class="mobile-menu-modal" aria-label="Mobile Navigation" role="dialog" aria-modal="true">
+    <div class="mobile-menu-top">
+      <a href="index.html" class="brand-link">
+        <div class="avatar-sea">SK</div>
+        <div class="brand-meta">
+          <h1>Sudhanshu Kulshreshtha</h1>
+        </div>
+      </a>
+      <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close Navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
     </div>
 
-    <ul class="mobile-nav-list">
-      <li>
-        <a href="index.html" class="mobile-nav-link">
-          <span class="mobile-nav-num">00</span>
-          <span>Story &amp; Prologue</span>
+    <ul class="mobile-menu-list">
+      <li class="mobile-menu-item">
+        <a href="index.html">
+          <span class="mobile-menu-num">00</span>
+          <span class="mobile-menu-label">Story &amp; Prologue</span>
         </a>
       </li>
-      <li>
-        <a href="empathy.html" class="mobile-nav-link">
-          <span class="mobile-nav-num">01</span>
-          <span>Empathy First</span>
+      <li class="mobile-menu-item">
+        <a href="empathy.html">
+          <span class="mobile-menu-num">01</span>
+          <span class="mobile-menu-label">Empathy First</span>
         </a>
       </li>
-      <li>
-        <a href="how-i-work.html" class="mobile-nav-link active">
-          <span class="mobile-nav-num">02</span>
-          <span>How I Solve Problems</span>
+      <li class="mobile-menu-item">
+        <a href="how-i-work.html" class="active">
+          <span class="mobile-menu-num">02</span>
+          <span class="mobile-menu-label">How I Solve Problems</span>
         </a>
       </li>
-      <li>
-        <a href="work.html" class="mobile-nav-link">
-          <span class="mobile-nav-num">03</span>
-          <span>Builder &amp; Published Work</span>
+      <li class="mobile-menu-item">
+        <a href="work.html">
+          <span class="mobile-menu-num">03</span>
+          <span class="mobile-menu-label">Builder &amp; Published Work</span>
         </a>
       </li>
-      <li>
-        <a href="life.html" class="mobile-nav-link">
-          <span class="mobile-nav-num">04</span>
-          <span>Life Near Water</span>
+      <li class="mobile-menu-item">
+        <a href="life.html">
+          <span class="mobile-menu-num">04</span>
+          <span class="mobile-menu-label">Life Near Water</span>
         </a>
       </li>
     </ul>
 
-    <div class="mobile-drawer-actions">
+    <div class="mobile-menu-actions">
       <a href="../Sudhanshu_Kulshreshtha_Resume.pdf" download="Sudhanshu_Kulshreshtha_Resume.pdf" class="btn btn-outline">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
         <span>Download CV (PDF)</span>
@@ -110,7 +114,7 @@
         <span>Get in Touch</span>
       </a>
     </div>
-  </aside>
+  </div>
 
   <main>
     <section class="page-hero">
@@ -127,87 +131,92 @@
           Complex challenges in organisations rarely fail because of a lack of technology. They fail because people rush into solutions before understanding what is actually happening. My approach takes unclear problems, listens for the real signal, grounds the facts in evidence, and builds practical tools that people can rely on.
         </p>
 
-        <!-- Stepper Blueprint -->
-        <div class="stepper-column">
-          <div class="stepper-box">
-            <div class="stepper-indicator">
-              01
-              <span>Listen</span>
+        <!-- Editorial Method Stream (Zero Clunky Boxes) -->
+        <div class="method-stream">
+          <article class="method-step">
+            <div class="method-meta">
+              <span class="method-num">01</span>
+              <span class="method-tag">Listen</span>
             </div>
-            <div class="stepper-body">
-              <h3>Listen without judgment</h3>
-              <p>
+            <div class="method-body">
+              <h2 class="method-title">Listen without judgment</h2>
+              <p class="method-desc">
                 When a system produces poor results, teams often blame human error or implement hasty patches. I begin by setting aside assumptions, observing actual workflows, and listening to the people experiencing the friction firsthand.
               </p>
-              <div class="stepper-practice">
-                <strong>Real world example:</strong> When crisis chat survey scores dipped, others assumed volunteers were underperforming. Qualitative review showed the true cause: sensitive trauma questions were being asked immediately after emotional distress, overwhelming young people.
+              <div class="method-evidence">
+                <span class="method-evidence-label">In Practice</span>
+                <p>When crisis chat survey scores dipped, others assumed volunteers were underperforming. Qualitative review showed the true cause: sensitive trauma questions were being asked immediately after emotional distress, overwhelming young people.</p>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="stepper-box">
-            <div class="stepper-indicator">
-              02
-              <span>Declutter</span>
+          <article class="method-step">
+            <div class="method-meta">
+              <span class="method-num">02</span>
+              <span class="method-tag">Declutter</span>
             </div>
-            <div class="stepper-body">
-              <h3>Strip away the noise</h3>
-              <p>
+            <div class="method-body">
+              <h2 class="method-title">Strip away the noise</h2>
+              <p class="method-desc">
                 Cluttered thinking creates cluttered data. I remove vanity indicators, redundant steps, and emotional friction so the core question becomes visible to all stakeholders.
               </p>
-              <div class="stepper-practice">
-                <strong>Real world example:</strong> Cut through repetitive board requests by replacing ad hoc spreadsheets with a structured three tier model, giving trustees instant visibility without endless preparation back and forth.
+              <div class="method-evidence">
+                <span class="method-evidence-label">In Practice</span>
+                <p>Cut through repetitive board requests by replacing ad hoc spreadsheets with a structured three tier model, giving trustees instant visibility without endless preparation back and forth.</p>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="stepper-box">
-            <div class="stepper-indicator">
-              03
-              <span>Evidence</span>
+          <article class="method-step">
+            <div class="method-meta">
+              <span class="method-num">03</span>
+              <span class="method-tag">Evidence</span>
             </div>
-            <div class="stepper-body">
-              <h3>Find the grounded evidence</h3>
-              <p>
+            <div class="method-body">
+              <h2 class="method-title">Find the grounded evidence</h2>
+              <p class="method-desc">
                 Empathy identifies the problem, but evidence must validate the direction. I construct clean data pipelines, model patterns, and gather empirical facts to verify whether assumptions hold up to scrutiny.
               </p>
-              <div class="stepper-practice">
-                <strong>Real world example:</strong> Synthesized five years of frontline service data across 250,000 support conversations to uncover longitudinal trends in youth loneliness and peak service demand for Ireland.
+              <div class="method-evidence">
+                <span class="method-evidence-label">In Practice</span>
+                <p>Synthesized five years of frontline service data across 250,000 support conversations to uncover longitudinal trends in youth loneliness and peak service demand for Ireland.</p>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="stepper-box">
-            <div class="stepper-indicator">
-              04
-              <span>Build</span>
+          <article class="method-step">
+            <div class="method-meta">
+              <span class="method-num">04</span>
+              <span class="method-tag">Build</span>
             </div>
-            <div class="stepper-body">
-              <h3>Build practical, sustainable solutions</h3>
-              <p>
+            <div class="method-body">
+              <h2 class="method-title">Build practical, sustainable solutions</h2>
+              <p class="method-desc">
                 I build tools that real people can understand and operate. Whether crafting an open public utility, an executive reporting suite, or an automated workflow, simplicity and human dignity guide every line.
               </p>
-              <div class="stepper-practice">
-                <strong>Real world example:</strong> When learner driving routes were paywalled in Dublin, I gathered public records, mapped each route myself, and built an open website so anyone can practice for free.
+              <div class="method-evidence">
+                <span class="method-evidence-label">In Practice</span>
+                <p>When learner driving routes were paywalled in Dublin, I gathered public records, mapped each route myself, and built an open website so anyone can practice for free.</p>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="stepper-box">
-            <div class="stepper-indicator">
-              05
-              <span>Verify</span>
+          <article class="method-step">
+            <div class="method-meta">
+              <span class="method-num">05</span>
+              <span class="method-tag">Verify</span>
             </div>
-            <div class="stepper-body">
-              <h3>Check what changed afterwards</h3>
-              <p>
+            <div class="method-body">
+              <h2 class="method-title">Check what changed afterwards</h2>
+              <p class="method-desc">
                 Work does not end when code is deployed or a report is delivered. I track user adoption, evaluate subsequent performance, and ensure the original friction has actually been alleviated.
               </p>
-              <div class="stepper-practice">
-                <strong>Real world example:</strong> Monitored the survey redesign over time to verify that the initial study shows an increased response rate along with higher response volume while protecting vulnerable users.
+              <div class="method-evidence">
+                <span class="method-evidence-label">In Practice</span>
+                <p>Monitored the survey redesign over time to verify that the initial study shows an increased response rate along with higher response volume while protecting vulnerable users.</p>
               </div>
             </div>
-          </div>
+          </article>
         </div>
 
         <!-- Next / Prev Chapter Navigation -->

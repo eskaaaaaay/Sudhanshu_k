@@ -100,48 +100,44 @@ function initSentimentExplorer() {
   render("all");
 }
 
-// Mobile Drawer Navigation Controller
+// Mobile Full-Screen Navigation Controller
 (function() {
-  function setupDrawer() {
-    const hamburgerBtn = document.getElementById('mobile-menu-trigger');
-    const drawer = document.getElementById('mobile-nav-drawer');
-    const overlay = document.getElementById('mobile-nav-overlay');
-    const closeBtn = document.getElementById('mobile-drawer-close');
+  function setupMobileMenu() {
+    const trigger = document.getElementById('mobile-menu-trigger');
+    const modal = document.getElementById('mobile-menu-modal');
+    const closeBtn = document.getElementById('mobile-menu-close');
 
-    if (!hamburgerBtn || !drawer || !overlay) return;
+    if (!trigger || !modal) return;
 
-    function openDrawer() {
-      drawer.classList.add('active');
-      overlay.classList.add('active');
+    function openMenu() {
+      modal.classList.add('active');
       document.body.style.overflow = 'hidden';
-      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      trigger.setAttribute('aria-expanded', 'true');
     }
 
-    function closeDrawer() {
-      drawer.classList.remove('active');
-      overlay.classList.remove('active');
+    function closeMenu() {
+      modal.classList.remove('active');
       document.body.style.overflow = '';
-      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      trigger.setAttribute('aria-expanded', 'false');
     }
 
-    hamburgerBtn.addEventListener('click', openDrawer);
-    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-    overlay.addEventListener('click', closeDrawer);
+    trigger.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && drawer.classList.contains('active')) {
-        closeDrawer();
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeMenu();
       }
     });
 
-    const links = drawer.querySelectorAll('.mobile-nav-link');
-    links.forEach(l => l.addEventListener('click', closeDrawer));
+    const links = modal.querySelectorAll('a');
+    links.forEach(link => link.addEventListener('click', closeMenu));
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupDrawer);
+    document.addEventListener('DOMContentLoaded', setupMobileMenu);
   } else {
-    setupDrawer();
+    setupMobileMenu();
   }
 })();
 
